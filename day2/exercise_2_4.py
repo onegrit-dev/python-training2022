@@ -2,7 +2,7 @@ import random
 
 
 def roll():
-    return random.randint(1, 7)
+    return random.randint(1, 6)
 
 
 dice_1 = 0

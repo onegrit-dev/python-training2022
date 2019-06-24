@@ -1,6 +1,6 @@
 import random
 
-x = random.randint(1, 7)
+x = random.randint(1, 6)
 if x % 2 == 0:
     print('偶数です。値は{}です。'.format(x))
 else:

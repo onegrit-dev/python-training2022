@@ -1,15 +1,14 @@
-a = 5
-b = 3
-print(a + b)
-print(a - b)
-print(a * b)
-print(a / b)
+import random
+
+x = random.randint(1, 6)
+if x % 2 == 0:
+    print('偶数です。値は{}です。'.format(x))
+else:
+    print('奇数です。値は{}です。'.format(x))
+
 
 """
-【実行結果】
+【実行結果】（例）
 
-8
-2
-15
-1.6666666666666667
+奇数です。値は3です。
 """

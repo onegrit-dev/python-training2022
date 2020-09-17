@@ -1,14 +1,13 @@
-import random
+def power(x, y=2):
+    return x ** y
 
-x = random.randint(1, 6)
-if x % 2 == 0:
-    print('偶数です。値は{}です。'.format(x))
-else:
-    print('奇数です。値は{}です。'.format(x))
 
+print(power(2, 3))
+print(power(3))
 
 """
-【実行結果】（例）
+【実行結果】
 
-奇数です。値は3です。
+8
+9
 """

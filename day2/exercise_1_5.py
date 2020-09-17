@@ -1,46 +1,39 @@
-import random
+class TwoNumbersCalculator:
+    author = 'akiyoko'
 
-for _ in range(30):
-    x = random.randint(0, 9)
-    print(x)
-    if x == 0:
-        print('ハイ、終了〜！')
-        break
-else:
-    print('ラッキー！0が出ませんでした。')
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return 'TwoNumbersCalculator({}, {})'.format(self.x, self.y)
+
+    def add(self):
+        return self.x + self.y
+
+    def print_add(self):
+        print('計算結果は{}です。'.format(self.add()))
+
+    @classmethod
+    def print_author(cls):
+        print('作者は{}です。'.format(cls.author))
+
+
+calculator = TwoNumbersCalculator(1, 2)
+print(calculator)
+print('x={}, y={}'.format(calculator.x, calculator.y))
+calculator.print_add()
+
+TwoNumbersCalculator.print_author()
+# クラスメソッドにはオブジェクトからもアクセス可能
+calculator.print_author()
 
 """
-【実行結果】（例）
+【実行結果】
 
-1
-6
-8
-2
-9
-2
-4
-9
-3
-9
-2
-6
-5
-7
-5
-5
-4
-2
-8
-3
-7
-8
-9
-3
-6
-5
-1
-1
-9
-7
-ラッキー！0が出ませんでした。
+TwoNumbersCalculator(1, 2)
+x=1, y=2
+計算結果は3です。
+作者はakiyokoです。
+作者はakiyokoです。
 """

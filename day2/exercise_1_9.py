@@ -1,11 +1,11 @@
 from time import time
 
-from day3.cards import ShuffledCards
+from day2.cards import ShuffledCards
 
 t = time()
 
 success_count = 0
-total_count = 1000000
+total_count = 100000
 
 for _ in range(total_count):
     cards = ShuffledCards()

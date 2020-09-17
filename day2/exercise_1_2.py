@@ -1,15 +1,12 @@
-import random
+def calculate_bmi(height, weight):
+    bmi = weight / (height / 100) ** 2
+    return bmi
 
-x = random.randint(0, 99)
-if x % 6 == 0:
-    print('6の倍数です。値は{}です。'.format(x))
-elif x % 3 == 0:
-    print('3の倍数です。値は{}です。'.format(x))
-else:
-    print('値は{}です。'.format(x))
+
+print(calculate_bmi(175, 60))
 
 """
-【実行結果】（例）
+【実行結果】
 
-3の倍数です。値は15です。
+19.591836734693878
 """

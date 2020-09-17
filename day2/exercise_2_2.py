@@ -1,12 +1,9 @@
-def calculate_bmi(height, weight):
-    bmi = weight / (height / 100) ** 2
-    return bmi
+import os
 
-
-print(calculate_bmi(175, 60))
+print(os.getcwd())
 
 """
-【実行結果】
+【実行結果】（例）
 
-19.591836734693878
+C:¥Users¥akiyoko¥PycharmProjects¥training1906¥day2
 """

@@ -1,6 +1,6 @@
 import unittest
 
-from day3.calculate import square, divide
+from day2.calculate import square, divide
 
 
 class TestSquare(unittest.TestCase):

@@ -1,9 +1,10 @@
-import os
+f = open('sample.txt', 'w')
+lines = ['This', 'is', 'Python', '3']
+f.write('\n'.join(lines))
+f.close()
 
-print(os.getcwd())
+# あるいは with文を使って
 
-"""
-【実行結果】（例）
-
-C:¥Users¥akiyoko¥PycharmProjects¥training1906¥day2
-"""
+with open('sample.txt', 'w') as f:
+    lines = ['This', 'is', 'Python', '3']
+    f.write('\n'.join(lines))

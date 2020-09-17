@@ -1,76 +1,46 @@
-cards = [
-    '♠A', '♠2', '♠3', '♠4', '♠5', '♠6', '♠7', '♠8', '♠9', '♠10', '♠J', '♠Q', '♠K',
-    '◇A', '◇2', '◇3', '◇4', '◇5', '◇6', '◇7', '◇8', '◇9', '◇10', '◇J', '◇Q', '◇K',
-    '♡A', '♡2', '♡3', '♡4', '♡5', '♡6', '♡7', '♡8', '♡9', '♡10', '♡J', '♡Q', '♡K',
-    '♣A', '♣2', '♣3', '♣4', '♣5', '♣6', '♣7', '♣8', '♣9', '♣10', '♣J', '♣Q', '♣K',
-]
+class TwoNumbersCalculator:
+    author = 'akiyoko'
 
-for card in cards:
-    print(card)
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-"""
-【備考】
-逆から表示するためのコードはこちら。
-listのreverse()メソッドを使うと、元のlistオブジェクトは書き換えられるが戻り値がNoneになるため、TypeErrorが発生する。
-そこで、組み込み関数のreversed()を使う。
+    def __str__(self):
+        return 'TwoNumbersCalculator({}, {})'.format(self.x, self.y)
 
-for card in reversed(cards):
-    print(card)
-"""
+    def add(self):
+        return self.x + self.y
+
+    def print_add(self):
+        print('計算結果は{}です。'.format(self.add()))
+
+    @classmethod
+    def print_author(cls):
+        print('作者は{}です。'.format(cls.author))
+
+
+class ThreeNumbersCalculator(TwoNumbersCalculator):
+
+    def __init__(self, x, y, z):
+        super().__init__(x, y)
+        self.z = z
+
+    def __str__(self):
+        return 'ThreeNumbersCalculator({}, {}, {})'.format(self.x, self.y, self.z)
+
+    def add(self):
+        return super().add() + self.z
+
+
+calculator = ThreeNumbersCalculator(1, 2, 3)
+print(calculator)
+print('x={}, y={}, z={}'.format(calculator.x, calculator.y, calculator.z))
+calculator.print_add()
 
 """
 【実行結果】
 
-♠A
-♠2
-♠3
-♠4
-♠5
-♠6
-♠7
-♠8
-♠9
-♠10
-♠J
-♠Q
-♠K
-◇A
-◇2
-◇3
-◇4
-◇5
-◇6
-◇7
-◇8
-◇9
-◇10
-◇J
-◇Q
-◇K
-♡A
-♡2
-♡3
-♡4
-♡5
-♡6
-♡7
-♡8
-♡9
-♡10
-♡J
-♡Q
-♡K
-♣A
-♣2
-♣3
-♣4
-♣5
-♣6
-♣7
-♣8
-♣9
-♣10
-♣J
-♣Q
-♣K
+ThreeNumbersCalculator(1, 2, 3)
+x=1, y=2, z=3
+計算結果は6です。
 """

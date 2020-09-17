@@ -1,40 +1,56 @@
-import random
+class BMICalculator:
+    def __init__(self, height, weight):
+        self.height = height  # cm
+        self.weight = weight  # kg
 
-cards = [
-    '♠A', '♠2', '♠3', '♠4', '♠5', '♠6', '♠7', '♠8', '♠9', '♠10', '♠J', '♠Q', '♠K',
-    '◇A', '◇2', '◇3', '◇4', '◇5', '◇6', '◇7', '◇8', '◇9', '◇10', '◇J', '◇Q', '◇K',
-    '♡A', '♡2', '♡3', '♡4', '♡5', '♡6', '♡7', '♡8', '♡9', '♡10', '♡J', '♡Q', '♡K',
-    '♣A', '♣2', '♣3', '♣4', '♣5', '♣6', '♣7', '♣8', '♣9', '♣10', '♣J', '♣Q', '♣K',
-]
+    def calculate(self):
+        return self.weight / (self.height / 100) ** 2
 
-random.shuffle(cards)
-print(cards)
-for i, card in enumerate(cards, start=1):
-    print('{}枚目は{}です。'.format(i, card))
-    if card.startswith('♡'):
-        print('♡が出たので終了！')
-        break
+    def judge(self):
+        bmi = self.calculate()
+        if bmi < 18.5:
+            return '低体重'
+        elif 18.5 <= bmi and bmi < 25:
+            return '普通'
+        else:
+            return '肥満'
 
-print('記録は{}枚です'.format(i))
+    def print_bmi(self):
+        print('身長{}cm・体重{}kgの場合のBMIは、{}です。'.format(
+            self.height,
+            self.weight,
+            self.calculate(),
+        ))
+        print('体型は{}です。'.format(self.judge()))
+
+
+class CatBMICalculator(BMICalculator):
+    def judge(self):
+        bmi = self.calculate()
+        if bmi < 50:
+            return '低体重'
+        elif 50 <= bmi and bmi < 70:
+            return '普通'
+        else:
+            return '肥満'
+
+
+cat_calculator = CatBMICalculator(30, 4)
+cat_calculator.print_bmi()
+
+cat_calculator = CatBMICalculator(35, 8)
+cat_calculator.print_bmi()
+
+cat_calculator = CatBMICalculator(40, 12)
+cat_calculator.print_bmi()
 
 """
 【実行結果】
 
-1枚目は◇Qです。
-2枚目は◇7です。
-3枚目は♣10です。
-4枚目は◇5です。
-5枚目は♠2です。
-6枚目は♣8です。
-7枚目は♣Jです。
-8枚目は♠Aです。
-9枚目は◇Kです。
-10枚目は♣5です。
-11枚目は♠10です。
-12枚目は♣4です。
-13枚目は♣Qです。
-14枚目は♣6です。
-15枚目は♡3です。
-♡が出たので終了！
-記録は15枚です
+身長30cm・体重4kgの場合のBMIは、44.44444444444444です。
+体型は低体重です。
+身長35cm・体重8kgの場合のBMIは、65.30612244897961です。
+体型は普通です。
+身長40cm・体重12kgの場合のBMIは、74.99999999999999です。
+体型は肥満です。
 """

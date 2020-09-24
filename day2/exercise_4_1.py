@@ -1,6 +1,6 @@
 import unittest
 
-from day2.calculate import square, divide
+from day2.calculate import divide, square
 
 
 class TestSquare(unittest.TestCase):
@@ -20,20 +20,26 @@ class TestSquare(unittest.TestCase):
 
 
 class TestDivide(unittest.TestCase):
+
     def test_calculate_success(self):
-        self.assertEqual(divide(6, 2), 3)
+        self.assertEqual(3, divide(6, 2))
 
     def test_calculate_if_x_none(self):
-        self.assertRaises(TypeError, divide, None, 2)
+        with self.assertRaises(TypeError):
+            divide(None, 2)
 
     def test_calculate_if_x_str(self):
-        self.assertRaises(TypeError, divide, 'a', 2)
+        with self.assertRaises(TypeError):
+            divide('a', 2)
 
     def test_calculate_if_y_none(self):
-        self.assertRaises(TypeError, divide, 6, None)
+        with self.assertRaises(TypeError):
+            divide(6, None)
 
     def test_calculate_if_y_str(self):
-        self.assertRaises(TypeError, divide, 6, 'a')
+        with self.assertRaises(TypeError):
+            divide(6, 'a')
 
     def test_calculate_if_y_zero(self):
-        self.assertRaises(TypeError, divide, 6, 0)
+        with self.assertRaises(TypeError):
+            divide(6, 0)

@@ -21,7 +21,7 @@ def draw_fortune2():
         # 2, 3
         return '末吉'
     else:
-        # 1
+        # 0, 1
         return '凶'
 
 

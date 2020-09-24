@@ -5,5 +5,5 @@ print(os.getcwd())
 """
 【実行結果】（例）
 
-C:¥Users¥akiyoko¥PycharmProjects¥training1906¥day2
+C:¥Users¥akiyoko¥PycharmProjects¥training2009¥day2
 """

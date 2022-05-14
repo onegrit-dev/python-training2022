@@ -1,15 +1,15 @@
-import random
-
-x = random.randint(0, 99)
-if x % 6 == 0:
-    print('6の倍数です。値は{}です。'.format(x))
-elif x % 3 == 0:
-    print('3の倍数です。値は{}です。'.format(x))
-else:
-    print('値は{}です。'.format(x))
+a = 10
+b = -3
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
 
 """
-【実行結果】（例）
+【実行結果】
 
-3の倍数です。値は15です。
+7
+13
+-30
+-3.3333333333333335
 """

@@ -1,17 +1,9 @@
-a = [1, 2, 3, 4, 3, 2, 1]
-print(type(a))
-print(len(a))
-print(sum(a))
-print(tuple(a))
-print(set(a))
-
+words = ['This', 'is', 'Python', 3]
+for word in words:
+    print(word, end=' ')
 
 """
 【実行結果】
 
-<class 'list'>
-7
-16
-(1, 2, 3, 4, 3, 2, 1)
-{1, 2, 3, 4}
+This is Python 3 
 """

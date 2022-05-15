@@ -1,12 +1,17 @@
-def calculate_bmi(height, weight):
-    bmi = weight / (height / 100) ** 2
-    return bmi
+age = 20
+is_student = True
 
+price = 1900
+if is_student:
+    if age >= 19:
+        price = 1500
+    else:
+        price = 1000
 
-print(calculate_bmi(175, 60))
+print('価格は{:,}円です。'.format(price))
 
 """
 【実行結果】
 
-19.591836734693878
+価格は1,500円です。
 """

@@ -1,56 +1,35 @@
-import unittest
+class BMICalculator:
+    def __init__(self, height, weight):
+        self.height = height  # cm
+        self.weight = weight  # kg
 
-from day2.calculate import divide, square
+    def calculate(self):
+        return self.weight / (self.height / 100) ** 2
+
+    def judge(self):
+        bmi = self.calculate()
+        if bmi < 18.5:
+            return '低体重'
+        elif 18.5 <= bmi and bmi < 25:
+            return '普通'
+        else:
+            return '肥満'
+
+    def print_bmi(self):
+        print('身長{}cm・体重{}kgの場合のBMIは、{}です。'.format(
+            self.height,
+            self.weight,
+            self.calculate(),
+        ))
+        print('体型は{}です。'.format(self.judge()))
 
 
-class TestSquare(unittest.TestCase):
-    """square関数のテストクラス"""
+calculator = BMICalculator(177, 77)
+calculator.print_bmi()
 
-    def test_square_success(self):
-        """square関数のテスト（正常系）"""
-        self.assertEqual(0, square(0))
-        self.assertEqual(1, square(1))
-        self.assertEqual(4, square(2))
+"""
+【実行結果】
 
-    def test_square_if_none(self):
-        """square関数のテスト（引数がNoneの場合）"""
-        with self.assertRaises(TypeError):
-            square(None)
-
-    def test_square_if_str(self):
-        """square関数のテスト（引数が文字列の場合）"""
-        with self.assertRaises(TypeError):
-            square('a')
-
-
-class TestDivide(unittest.TestCase):
-    """divide関数のテストクラス"""
-
-    def test_calculate_success(self):
-        """divide関数のテスト（正常系）"""
-        self.assertEqual(3, divide(6, 2))
-
-    def test_calculate_if_x_none(self):
-        """divide関数のテスト（引数xがNoneの場合）"""
-        with self.assertRaises(TypeError):
-            divide(None, 2)
-
-    def test_calculate_if_x_str(self):
-        """divide関数のテスト（引数xが文字列の場合）"""
-        with self.assertRaises(TypeError):
-            divide('a', 2)
-
-    def test_calculate_if_y_none(self):
-        """divide関数のテスト（引数yがNoneの場合）"""
-        with self.assertRaises(TypeError):
-            divide(6, None)
-
-    def test_calculate_if_y_str(self):
-        """divide関数のテスト（引数yが文字列の場合）"""
-        with self.assertRaises(TypeError):
-            divide(6, 'a')
-
-    def test_calculate_if_y_zero(self):
-        """divide関数のテスト（引数yが0の場合）"""
-        with self.assertRaises(TypeError):
-            divide(6, 0)
+身長177cm・体重77kgの場合のBMIは、24.577867151840145です。
+体型は普通です。
+"""

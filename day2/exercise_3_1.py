@@ -1,10 +1,13 @@
-f = open('sample.txt')
-for line in f:
-    print(line)
-f.close()
+def power(x, y=2):
+    return x ** y
 
-# あるいは with文を使って
 
-with open('sample.txt') as f:
-    for line in f:
-        print(line)
+print(power(2, 3))
+print(power(3))
+
+"""
+【実行結果】
+
+8
+9
+"""

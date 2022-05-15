@@ -1,22 +1,45 @@
-from pathlib import Path
+import random
 
-# CSVファイルのパス
-file_path = Path('N225.csv')
 
-if not Path.exists(file_path):
-    raise Exception('ファイルが存在しません。')
+def roll():
+    return random.randint(1, 6)
 
-lines = []
-with open(file_path) as f:
-    for line in f.readlines():
-        line = line.rstrip()
-        lines.append(line.split(','))
 
-# あるいはリスト内法表記を使って
+dice_1 = 0
+dice_2 = 0
+dice_3 = 0
+dice_4 = 0
+dice_5 = 0
+dice_6 = 0
+for _ in range(10000):
+    x = roll()
+    if x == 1:
+        dice_1 += 1
+    elif x == 2:
+        dice_2 += 1
+    elif x == 3:
+        dice_3 += 1
+    elif x == 4:
+        dice_4 += 1
+    elif x == 5:
+        dice_5 += 1
+    elif x == 6:
+        dice_6 += 1
 
-with open(file_path) as f:
-    lines = [line.rstrip().split(',') for line in f.readlines()]
+print('1が出たのは{}回です。'.format(dice_1))
+print('2が出たのは{}回です。'.format(dice_2))
+print('3が出たのは{}回です。'.format(dice_3))
+print('4が出たのは{}回です。'.format(dice_4))
+print('5が出たのは{}回です。'.format(dice_5))
+print('6が出たのは{}回です。'.format(dice_6))
 
-print(lines)
-print(type(lines))
-print(type(lines[0]))
+"""
+【実行結果】（例）
+
+1が出たのは1377回です。
+2が出たのは1433回です。
+3が出たのは1502回です。
+4が出たのは1388回です。
+5が出たのは1490回です。
+6が出たのは1410回です。
+"""

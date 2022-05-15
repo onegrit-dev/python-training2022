@@ -1,10 +1,12 @@
-f = open('sample.txt', 'w')
-lines = ['This', 'is', 'Python', '3']
-f.write('\n'.join(lines))
-f.close()
+def calculate_bmi(height, weight):
+    bmi = weight / (height / 100) ** 2
+    return bmi
 
-# あるいは with文を使って
 
-with open('sample.txt', 'w') as f:
-    lines = ['This', 'is', 'Python', '3']
-    f.write('\n'.join(lines))
+print(calculate_bmi(175, 60))
+
+"""
+【実行結果】
+
+19.591836734693878
+"""

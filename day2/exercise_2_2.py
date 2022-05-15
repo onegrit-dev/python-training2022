@@ -1,9 +1,17 @@
-import os
-
-print(os.getcwd())
+for _ in range(10):
+    print('逃げちゃダメだ')
 
 """
-【実行結果】（例）
+【実行結果】
 
-C:¥Users¥akiyoko¥PycharmProjects¥training2009¥day2
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
+逃げちゃダメだ
 """

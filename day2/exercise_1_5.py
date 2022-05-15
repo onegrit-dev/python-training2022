@@ -1,39 +1,15 @@
-class TwoNumbersCalculator:
-    author = 'akiyoko'
+import random
 
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __str__(self):
-        return 'TwoNumbersCalculator({}, {})'.format(self.x, self.y)
-
-    def add(self):
-        return self.x + self.y
-
-    def print_add(self):
-        print('計算結果は{}です。'.format(self.add()))
-
-    @classmethod
-    def print_author(cls):
-        print('作者は{}です。'.format(cls.author))
-
-
-calculator = TwoNumbersCalculator(1, 2)
-print(calculator)
-print('x={}, y={}'.format(calculator.x, calculator.y))
-calculator.print_add()
-
-TwoNumbersCalculator.print_author()
-# クラスメソッドにはオブジェクトからもアクセス可能
-calculator.print_author()
+x = random.randint(0, 99)
+if x % 6 == 0:
+    print('6の倍数です。値は{}です。'.format(x))
+elif x % 3 == 0:
+    print('3の倍数です。値は{}です。'.format(x))
+else:
+    print('値は{}です。'.format(x))
 
 """
-【実行結果】
+【実行結果】（例）
 
-TwoNumbersCalculator(1, 2)
-x=1, y=2
-計算結果は3です。
-作者はakiyokoです。
-作者はakiyokoです。
+3の倍数です。値は15です。
 """

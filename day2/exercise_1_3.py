@@ -1,7 +1,7 @@
-age = 2
-is_student = False
+age = 2  # 年齢
+is_student = False  # 学生かどうか
 
-price = 1900
+price = 1900  # 価格
 if age < 3:
     price = 0
 elif is_student:

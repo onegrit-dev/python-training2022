@@ -1,6 +1,6 @@
-is_student = True
+is_student = True  # 学生かどうか
 
-price = 1900
+price = 1900  # 価格
 if is_student:
     price = 1000
 

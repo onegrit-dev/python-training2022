@@ -1,7 +1,7 @@
-age = 20
-is_student = True
+age = 20  # 年齢
+is_student = True  # 学生かどうか
 
-price = 1900
+price = 1900  # 価格
 if is_student:
     if age >= 19:
         price = 1500

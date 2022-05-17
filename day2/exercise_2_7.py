@@ -18,7 +18,7 @@ for i, card in enumerate(cards, start=1):
 print('記録は{}枚です'.format(i))
 
 """
-【実行結果】
+【実行結果】（例）
 
 1枚目は◇Qです。
 2枚目は◇7です。

@@ -19,7 +19,7 @@ for i, card in enumerate(cards, start=1):
 """
 
 """
-【実行結果】
+【実行結果】（例）
 
 1枚目は♠Aです。
 2枚目は♠2です。

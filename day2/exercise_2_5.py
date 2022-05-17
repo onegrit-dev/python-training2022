@@ -19,7 +19,7 @@ for card in reversed(cards):
 """
 
 """
-【実行結果】
+【実行結果】（例）
 
 ♠A
 ♠2

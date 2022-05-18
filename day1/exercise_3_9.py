@@ -18,7 +18,7 @@ h
 o
 n
 Traceback (most recent call last):
-  File "/Users/akiyoko/PycharmProjects/training1906/day1/exercise_3_9.py", line 8, in <module>
+  File "/Users/akiyoko/PycharmProjects/training2022/day1/exercise_3_9.py", line 9, in <module>
     print(a[6])
 IndexError: string index out of range
 """

@@ -1,10 +1,4 @@
-f = open('sample.txt', 'w')
-lines = ['This', 'is', 'Python', '3']
-f.write('\n'.join(lines))
-f.close()
+lines = ['I', 'like', 'Python']
 
-# あるいは with文を使って
-
-with open('sample.txt', 'w') as f:
-    lines = ['This', 'is', 'Python', '3']
-    f.write('\n'.join(lines))
+with open('sample2.txt', 'w') as f:
+    f.writelines(' '.join(lines))

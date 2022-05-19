@@ -4,7 +4,6 @@ import openpyxl
 wb = openpyxl.Workbook()
 # 1つ目のシートをWorksheetオブジェクトとして取得
 ws = wb.worksheets[0]
-
 # セルA1に値を書き込む
 ws['A1'] = 'パイソン'
 

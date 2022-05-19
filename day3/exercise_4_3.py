@@ -1,4 +1,4 @@
-from pathlib import Path
+lines = ['I', 'like', 'Python']
 
-if not Path.exists(Path('sample.txt')):
-    raise Exception('ファイルが存在しません。')
+with open('sample2.txt', 'w') as f:
+    f.writelines(' '.join(lines))
